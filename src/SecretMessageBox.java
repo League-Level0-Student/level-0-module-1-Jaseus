@@ -28,4 +28,23 @@ public class SecretMessageBox {
 
 	// 5. If the password does not match, pop-up "INTRUDER!!"
 
+
+public static void main(String[] args) {
+	String message = JOptionPane.showInputDialog("Hey, user. Tell me a secret message you want me to know :)");	
+		String passcode = JOptionPane.showInputDialog("Okay, thanks! I promise to not tell ANYONE unless if they know your passcode :) So what shall it be?");
+			JOptionPane.showMessageDialog(null, "Okay, then, bye!");
+		String answer = JOptionPane.showInputDialog("Hello, new user, I'm guessing that you're trying to know their secret message, eh? Well, to see it, you must tell me the passcode :)");
+			if(answer.equals(passcode)) {
+				JOptionPane.showMessageDialog(null, "All right, I guess I can trust you :) The secret message was " + "'" + message + "'");
+			}else {
+				while(!answer.equals(passcode)) {
+					answer = JOptionPane.showInputDialog("INCORRECT. Try again:");
+						if(answer.equals(passcode)) {
+							JOptionPane.showMessageDialog(null, "All right, I guess I can trust you :) The secret message was " + "'" + message + "'");
+						}
+				
+				}
+			}
+					
+	}
 }
